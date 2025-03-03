@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Custom checkbox</title>
+    <link href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/index.css" rel="stylesheet"/>
+    <link rel="shortcut icon" href="https://cdn.jsdelivr.net/npm/h8k-design@latest/dist/assets/favicon.ico">
+    <script src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.esm.js"
+            type="module"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/h8k-components/dist/h8k-components/h8k-components.js"></script>
+</head>
+<style>
+    .form-row{
+      display: flex;
+      flex-direction: row;  
+      justify-content: start;
+      align-items: center;
+    }
+    .form-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  margin-right: 8px;
+}
+
+.form-checkbox:checked {
+  background-color: #2ea44f;
+  border-color: #2ea44f;
+}
+
+.form-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Strike-through effect when checkbox is checked */
+.form-row label {
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.form-checkbox:checked + label {
+  color: #2ea44f;
+  text-decoration: line-through;
+}
+
+</style>
+
+<body>
+<!--HTML content goes here-->
+<h8k-navbar header="Custom checkbox"></h8k-navbar>
+
+<div class="my-40 mx-auto">
+    <div class="container">
+        <div class="screen">
+            <h3>Your checkbox</h3>
+            <div class="form-row">
+                <input type="checkbox" class="form-checkbox" id="completeTask">
+                <label for="completeTask">Complete the task</label>
+            </div>
+        </div>
+
+        <div class="screen">
+            <h3>Template</h3>
+            <div class="template">
+                <h4>Unchecked</h4>
+                <img src="./images/unchecked.png" width="171" />
+                <h4>Checked</h4>
+                <img src="./images/checked.png" width="172" />
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<!-- HMR and test infrastructure - DO NOT EDIT -->
+<script src="./bundle.js"></script>
+</html>
+
+
